@@ -17,8 +17,8 @@ public class MyAccountPage extends BasePage{
      */
     
     By username          = By.xpath("//*[@id=\"html-body\"]/div[4]/header/div[3]/div[1]/div/a/span");
-   
-    
+    By Myorders          = By.xpath("//*[@id=\"block-collapsible-nav\"]/ul/li[2]/a");
+    By Wishlist          = By.xpath("//*[@id=\"block-collapsible-nav\"]/ul/li[4]/a");
   
     
     /**
@@ -31,7 +31,7 @@ public class MyAccountPage extends BasePage{
      * Page Methods
      * @throws InterruptedException 
      */
-    
+
     public String verifyMyAccountUserName() throws InterruptedException {
         Log.info("Verifying the login email id");
         //String emailID = readText(emailid);
@@ -40,5 +40,17 @@ public class MyAccountPage extends BasePage{
                
         return readText(username);
     }
-	
+	public MyAccountPage NavigatingtoMyorders()throws InterruptedException {
+		
+		click(Myorders);
+		
+		return new MyAccountPage(driver);
+		
+		
+	}
+	public MyAccountPage NavigationtoMywishlist ()throws InterruptedException {
+		
+		click(Wishlist);
+		return new MyAccountPage(driver);
+}
 }

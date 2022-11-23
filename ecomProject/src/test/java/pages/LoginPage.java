@@ -28,7 +28,7 @@ public class LoginPage extends BasePage {
     By errorMessageUsernameXpath = By.xpath("//*[@id=\"loginForm\"]/div[1]/div/div");
     By errorMessagePasswordXpath = By.xpath("//*[@id=\"loginForm\"]/div[2]/div/div ");
     By signInButtonClass		 = By.className("btnSignIn");
-    
+    By creataccount              = By.xpath("//*[@id=\"maincontent\"]/div/div[3]/div/div[2]/div[1]/div[2]/div/div");
   
     
     /**
@@ -44,7 +44,12 @@ public class LoginPage extends BasePage {
     
     //Login to ABB emart
    
-    
+    public LoginPage newcustomer() throws InterruptedException {
+         Thread.sleep(3000);
+           click(creataccount );
+		return this;
+    }
+ 
     public MyAccountPage logintoABBemart(String username, String password) throws InterruptedException {
         Log.info("Trying to login to ABB emart.");
         writeText(userNameId, username);

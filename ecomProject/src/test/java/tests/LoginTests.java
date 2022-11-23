@@ -24,14 +24,14 @@ public class LoginTests extends BaseTest {
     public void validLoginTest(Method method) throws InterruptedException {
         //ExtentReports Description
        // startTest(method.getName(), "Valid Login Test");
-    	String emailidinput="testing123@yopmail.com";
-    	String password="testing@123";
+    	String emailidinput="test098@yopmail.com";
+    	String password="Testing@123";
     	homePage
     		.openABBemart()
     		.loginABBemart();
         loginPage.logintoABBemart(emailidinput, password);
-        Thread.sleep(5000);
-      //  String username = myaccountPage.verifyMyAccountUserName();
+       Thread.sleep(5000);
+        //String username = myaccountPage.verifyMyAccountUserName();
       //  assertEquals(username, "Hi, test4!");
       	
     }

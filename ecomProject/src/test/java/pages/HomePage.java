@@ -15,7 +15,8 @@ public class HomePage extends BasePage{
 	/**
      * Web Elements
      */
-    By loginregister             = By.xpath("//*[@id=\"html-body\"]/div[4]/header/div[3]/div[1]/div/a");
+    By loginregister        = By.xpath("//*[@id=\"html-body\"]/div[4]/header/div[3]/div[1]/div/a");
+    
     
     /**
      * Variables
