@@ -1,3 +1,4 @@
+
 package tests;
 
 import org.openqa.selenium.PageLoadStrategy;
@@ -9,10 +10,14 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import java.time.Duration;
+import com.test.Utility.*;
 
+import pages.AddNewAccountPage;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.MyAccountPage;
+import pages.MyWishlistPage;
+import pages.MyorderPage;
 import util.Log;
 
 public class BaseTest {
@@ -20,14 +25,18 @@ public class BaseTest {
     public LoginPage  loginPage;
     public HomePage homePage;
     public MyAccountPage myaccountPage;
+    public AddNewAccountPage addnewAccountPage;
+    public MyorderPage myorderPage;
+    public MyWishlistPage mywishlistPage;
     public WebDriverWait wait;
+   // public TestUtil testUtil;
     public WebDriver getDriver() {
         return driver;
     }
     @BeforeClass
     public void classLevelSetup() {
         Log.info("Tests is starting!");
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\akshi\\Downloads\\chromedriver_win32 (2)\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
         ChromeOptions option=new ChromeOptions();
         option.setPageLoadStrategy(PageLoadStrategy.NONE);
         option.addArguments("--disable-notifications");
@@ -40,6 +49,10 @@ public class BaseTest {
         loginPage = new LoginPage(driver);
         homePage=new HomePage(driver);
         myaccountPage=new MyAccountPage(driver);
+        addnewAccountPage = new AddNewAccountPage(driver);
+        myorderPage = new MyorderPage (driver);
+        mywishlistPage = new MyWishlistPage (driver);
+        
         
         wait = new WebDriverWait(driver,Duration.ofSeconds(20));
        }
