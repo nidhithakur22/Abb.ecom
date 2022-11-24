@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class BasePage {
 
-	public WebDriver     driver;
+	public static WebDriver     driver;
     public WebDriverWait wait;
     //Constructor
     public BasePage(WebDriver driver) {
@@ -27,6 +27,11 @@ public class BasePage {
     //Read Text
     public String readText(By by) {
         return waitVisibility(by).getText();
+    }
+    
+    //clear
+    public void clear(By by) {
+    	waitVisibility(by).clear();
     }
     //Wait
     public WebElement waitVisibility(By by) {
