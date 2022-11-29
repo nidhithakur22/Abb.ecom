@@ -24,11 +24,14 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import pages.AddNewAccountPage;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.LogoutPage;
 import pages.MyAccountPage;
 import pages.MyCartPage;
+import pages.MyWishlistPage;
+import pages.MyorderPage;
 import pages.ProductDescriptionPage;
 import util.Log;
 
@@ -43,6 +46,9 @@ public class BaseTest {
     public MyCartPage mycartpage;
     public LogoutPage logoutpage;
     public WebDriverWait wait;
+    public AddNewAccountPage addnewAccountPage;
+    public MyorderPage myorderPage;
+    public MyWishlistPage mywishlistPage;
     
     public WebDriver getDriver() {
         return driver;
@@ -65,6 +71,10 @@ public class BaseTest {
         productdescriptionPage = new ProductDescriptionPage(driver);
         mycartpage = new MyCartPage(driver);
         logoutpage = new LogoutPage(driver);
+        addnewAccountPage = new AddNewAccountPage(driver);
+        myorderPage = new MyorderPage (driver);
+        mywishlistPage = new MyWishlistPage (driver);
+               
         String emailidinput="smith.test1@yopmail.com";
     	String password="smith@123";
     	homePage
