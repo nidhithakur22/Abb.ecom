@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.ArrayList;
-import org.apache.commons.math3.stat.inference.TestUtils;
 import org.apache.poi.sl.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
@@ -26,8 +25,8 @@ public class TestUtil {
 	
 	
 	public static String TESTDATA_SHEET_PATH = "C:\\Users\\Asus\\Desktop\\ProductItem.xlsx";
-	static XSSFWorkbook book;
-	static XSSFSheet  sheet;
+	//static XSSFWorkbook book;
+	//static XSSFSheet  sheet;
 	
 	
 

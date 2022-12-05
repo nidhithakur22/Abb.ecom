@@ -8,7 +8,6 @@ import static org.testng.Assert.assertEquals;
 
 import java.lang.reflect.Method;
 
-import org.bouncycastle.its.ITSValidityPeriod.Unit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;

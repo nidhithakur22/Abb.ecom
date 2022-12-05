@@ -19,7 +19,7 @@ public class MyAccountPage extends BasePage{
     By username          = By.xpath("//*[@id=\"html-body\"]/div[4]/header/div[3]/div[1]/div/a/span");
     By Myorders          = By.xpath("//*[@id=\"block-collapsible-nav\"]/ul/li[2]/a");
     By Wishlist          = By.xpath("//*[@id=\"block-collapsible-nav\"]/ul/li[4]/a");
-  
+    By AddressBook           = By.xpath("//*[@id=\"block-collapsible-nav\"]/ul/li[5]/a");
     
     /**
      * Variables
@@ -53,4 +53,9 @@ public class MyAccountPage extends BasePage{
 		click(Wishlist);
 		return new MyAccountPage(driver);
 }
-}
+	
+public MyAccountPage NavigatingtoAddressBook  ()throws InterruptedException {
+		
+		click(AddressBook);
+		return new MyAccountPage(driver);
+}}
