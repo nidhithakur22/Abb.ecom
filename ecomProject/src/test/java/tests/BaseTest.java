@@ -25,6 +25,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import pages.AddNewAccountPage;
+import pages.AddressBookPage;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.LogoutPage;
@@ -49,7 +50,7 @@ public class BaseTest {
     public AddNewAccountPage addnewAccountPage;
     public MyorderPage myorderPage;
     public MyWishlistPage mywishlistPage;
-    
+    public AddressBookPage addressbookPage;
     public WebDriver getDriver() {
         return driver;
     }
@@ -66,6 +67,7 @@ public class BaseTest {
         driver = new ChromeDriver(option);
         driver.manage().window().maximize();
         loginPage = new LoginPage(driver);
+        
         homePage=new HomePage(driver);
         myaccountPage=new MyAccountPage(driver);
         productdescriptionPage = new ProductDescriptionPage(driver);
@@ -73,10 +75,11 @@ public class BaseTest {
         logoutpage = new LogoutPage(driver);
         addnewAccountPage = new AddNewAccountPage(driver);
         myorderPage = new MyorderPage (driver);
+        addressbookPage = new AddressBookPage(driver);
         mywishlistPage = new MyWishlistPage (driver);
                
-        String emailidinput="smith.test1@yopmail.com";
-    	String password="smith@123";
+        String emailidinput="test098@yopmail.com";
+    	String password="Testing@123";
     	homePage
     		.openABBemart()
     		.loginABBemart();

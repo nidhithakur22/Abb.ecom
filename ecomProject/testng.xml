@@ -10,8 +10,8 @@
     
     <test name="Test">
         <classes>
-            <class name="tests.WishlistValidationTest"></class>
-            <class name="tests.MyordersVerifyTest"></class>
+            <class name="tests.AddNewBillingAddressTest"></class>
+            <class name="tests.AddNewShippingAddressTest"></class>
           
         </classes>
     </test>
