@@ -45,9 +45,9 @@ public class MyCartPage extends BasePage{
 	 * Web Elements
 	 */	
 
-	By HomePage 				= By.xpath("//*[@id=\"html-body\"]/div[5]/header/div[3]/div[2]/a");
+	By HomePage 				= By.xpath("//*[@id=\"html-body\"]/div[3]/header/div[3]/div[2]/a");
 
-	By HomepageShoppingcart		= By.xpath("//*[@id=\"html-body\"]/div[4]/header/div[3]/div[3]/a");
+	By HomepageShoppingcart		= By.xpath("//*[@id=\"html-body\"]/div[3]/header/div[3]/div[3]/a");
 
 	By ShoppingcartProduct		= By.xpath("/html/body/div[4]/header/div[3]/div[3]/div/div/div/div[2]/div[5]/div/a");
 
@@ -55,6 +55,7 @@ public class MyCartPage extends BasePage{
 
 	By minusQuantity			= By.xpath("//*[@id=\"shopping-cart-table\"]/tbody[2]/tr/td[3]/div/div/span[1]");
 
+	
 	//getProduct method is fetching product name from Application
 	
 	public String getProduct() throws InterruptedException { 
@@ -110,6 +111,7 @@ public class MyCartPage extends BasePage{
 		
 		for(WebElement lsElement1 : list1)  	
 		{  
+		//	if(Productname1.equalsIgnoreCase(productname1)) {
 			 for(int i =0; i<=list1.size();i++) {			  
 				  lsElement1.click(); 
 				  lsElement1.clear();
@@ -120,9 +122,10 @@ public class MyCartPage extends BasePage{
 		a.sendKeys(Keys.ENTER).build().perform();
 		js.executeScript("window.scrollBy(0, 275);");
 		Thread.sleep(waittime);
-		return quantity;		 
+				 
+//	}
+		return quantity;
 	}
-
 	//DecreaseProductQuantity method is decreasing the product quantity by using decrement operator (-)
 	public String DecreaseProductQuantity(String Productname) throws InterruptedException {
 		
@@ -134,7 +137,7 @@ public class MyCartPage extends BasePage{
 		size=size*2;
 		for(;i<=size;i=i+2)
 		{
-			if(Productname.equalsIgnoreCase(productname1)) {
+		
 			js.executeScript("window.scrollBy(0, 230)");
 			String s1= "//*[@id='shopping-cart-table']/";
 			String s2 = "tbody["+i;
@@ -148,20 +151,21 @@ public class MyCartPage extends BasePage{
 			Thread.sleep(waittime);
 			Thread.sleep(10000);
 			}
-		}  		
+	 		
 		return Productname;
 
 	}
 	
 	//Place	an order method
 
-	By productSearch			= By.xpath("/html/body/div[4]/header/div[3]/div[4]/div[2]/form/div[1]/div/input");
+	By productSearch			= By.xpath("//input[contains (@id,'search_')]");
 	By linkSearch 				= By.xpath("//*[@id=\"eln-product-products\"]/div[1]/ol/li/div[3]/div/strong/a/span[2]");
 	By image					= By.xpath("//*[@id=\"magnifier-item-0\"]");
 	By qty						= By.xpath("//*[@id=\"qty\"]");
 	By pincode					= By.xpath("//*[@id=\"product-shipping-postcode\"]");
 	By calculateShipping		= By.xpath("//*[@id=\"product-shipping-button\"]");
 	By AddToCart				= By.xpath("/html/body/div[6]/main/div/div[2]/div[2]/div[4]/form/div[2]/div/div[2]/button[2]");
+	By BuyNow					= By.xpath("//*[@id=\"buy-now\"]");
 	By ShoppingCart				= By.xpath("//*[@id=\"maincontent\"]/div/div[1]/div[2]/div/div/div/a");		
 	By PlaceOrder				= By.xpath("//*[@id=\"cart-totals\"]/button/a");
 	By FreeShipping				= By.xpath("//*[@id=\"s_method_marketplace_221400_free_shipping\"]");
@@ -169,7 +173,16 @@ public class MyCartPage extends BasePage{
 	By TermCondition			= By.xpath("//*[@id=\"customTCcheckbox\"]");
 	By PaywithRazorpay			= By.xpath("//*[@id=\"abb-pay-with-razorpay\"]");
 	By PayLater					= By.xpath("//*[@id=\"form-common\"]/div[1]/div/div/div[2]/div[2]/div/button[6]");
-
+	By street					= By.xpath("//input[contains (@name,'street')]");
+	By city						= By.xpath("//input[contains (@name,'city')]");
+	By email					= By.xpath("//*[@id=\"customer-email\"]");
+	
+	By firstname 				= By.xpath("//*[@id=\"GY0TQD6\"]");
+	By lastName 				= By.xpath("//*[@id=\"A6307PL\"]");
+	By phonenumber				= By.xpath("//input[contains (@name,'telephone')]");
+	
+	By Next 					= By.xpath("//*[@id=\"shipping-method-buttons-container\"]/div/button");
+	
 	By searchbar				= By.xpath("/html/body/div[4]/header/div[3]/div[4]/div[2]/form/div[1]/div/input");
 
 	// Search a product from PDP 
@@ -213,36 +226,57 @@ public class MyCartPage extends BasePage{
 
 		js.executeScript("window.scrollBy(0, 1500);");
 		clear(qty);
-		writeText(qty, "12");
+		writeText(qty, "1");
 		Thread.sleep(waittime);
 		clear(pincode);
 		writeText(pincode,"110086");
 		Thread.sleep(waittime);
 		click(calculateShipping);
 		Thread.sleep(waittime);
-		click(AddToCart);
+		click(BuyNow);
 		Thread.sleep(waittime);
-		click(ShoppingCart);
+//		click(ShoppingCart);
+//		Thread.sleep(waittime);
+//		click(PlaceOrder);
+//		Thread.sleep(waittime);
+//		Thread.sleep(waittime);
+//		click(FreeShipping);
+//		Thread.sleep(waittime);
+//		click(NextToPayment);
+//		Thread.sleep(waittime);
+//		click(TermCondition);
+//		Thread.sleep(waittime);
+//		click(PaywithRazorpay);
+//		Thread.sleep(waittime);
+//		ArrayList<String> paymentWindow = new ArrayList<String> (driver.getWindowHandles());
+//		for(String Paywindow : paymentWindow ) {
+//			System.out.println(Paywindow);
+//			driver.switchTo().window(paymentWindow.get(1));
+//		}
+//		Thread.sleep(waittime);
+//		click(PayLater);
+//		Thread.sleep(waittime);
+//		Thread.sleep(waittime);
+//		writeText(email,"smith.test1@yopmail.com");
+//		Thread.sleep(waittime);
+//		writeText(firstname,"Nidhi");
+//		Thread.sleep(waittime);
+//		writeText(lastName,"Thakur");
+//		Thread.sleep(waittime);
+		writeText(street,"Karol bagh Delhi");
 		Thread.sleep(waittime);
-		click(PlaceOrder);
+		writeText(city,"Delhi");
 		Thread.sleep(waittime);
-		Thread.sleep(waittime);
-		click(FreeShipping);
+		writeText(phonenumber,"7838772822"	);
 		Thread.sleep(waittime);
 		click(NextToPayment);
 		Thread.sleep(waittime);
 		click(TermCondition);
 		Thread.sleep(waittime);
 		click(PaywithRazorpay);
-		Thread.sleep(waittime);
-		ArrayList<String> paymentWindow = new ArrayList<String> (driver.getWindowHandles());
-		for(String Paywindow : paymentWindow ) {
-			System.out.println(Paywindow);
-			driver.switchTo().window(paymentWindow.get(1));
-		}
-		Thread.sleep(waittime);
-		click(PayLater);
-		Thread.sleep(waittime);
+		
+		
+		
 		return new MyCartPage(driver);
 	}
 
